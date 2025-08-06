@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -229,16 +229,59 @@ Stay ahead of the curve with our thought leadership on executive search, talent 
 </p>
 </div>
 </div>
+<div id="category-container" class="relocated-categories">
+
+</div>
 <div class="page-content blog-content">
 
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Wait for Quarto to load the categories
+  setTimeout(function() {
+    const sidebar = document.getElementById('quarto-margin-sidebar');
+    const container = document.getElementById('category-container');
+    
+    if (sidebar && container) {
+      // Move the sidebar content to our container
+      container.innerHTML = sidebar.innerHTML;
+      container.style.visibility = 'visible';
+    }
+  }, 100);
+});
+</script>
 
 
 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Executive Search,Technology,Future Trends" data-listing-date-sort="1706400000000" data-listing-file-modified-sort="1754491235297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="805">
+<div class="g-col-1" data-index="0" data-categories="Executive Search,Technology,Future Trends" data-listing-date-sort="1706400000000" data-listing-file-modified-sort="1754491292769" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="805">
 <a href="../blog/posts/future-of-executive-search.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -274,7 +317,7 @@ Jan 28, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Executive Search,Diversity &amp; Inclusion,Leadership" data-listing-date-sort="1705276800000" data-listing-file-modified-sort="1754491235297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="955">
+<div class="g-col-1" data-index="1" data-categories="Executive Search,Diversity &amp; Inclusion,Leadership" data-listing-date-sort="1705276800000" data-listing-file-modified-sort="1754491292769" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="955">
 <a href="../blog/posts/building-diverse-leadership-teams.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -310,7 +353,7 @@ Jan 15, 2024
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="CEO Search,Board Governance,Succession Planning" data-listing-date-sort="1704153600000" data-listing-file-modified-sort="1754491235297" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="690">
+<div class="g-col-1" data-index="2" data-categories="CEO Search,Board Governance,Succession Planning" data-listing-date-sort="1704153600000" data-listing-file-modified-sort="1754491292769" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="690">
 <a href="../blog/posts/ceo-succession-planning.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">

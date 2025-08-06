@@ -385,113 +385,9 @@ html, body {
 
 /* ===== BLOG STYLES ===== */
 
-/* Fix for Quarto-generated category sidebar overlap - BLOG PAGES ONLY */
-
-/* Simple visual repositioning approach */
-.quarto-container:has(.quarto-listing) {
-  display: block !important;
-}
-
-.quarto-container:has(.quarto-listing) #quarto-margin-sidebar {
-  position: absolute !important;
-  top: 575px !important;
-  left: 4% !important;
-  right: 4% !important;
-  width: auto !important;
-  z-index: 5 !important;
-  background: none !important;
-  margin: 0 !important;
-  padding: 1rem 0 !important;
-}
-
-.quarto-container:has(.quarto-listing) .content.column-page-left {
-  margin-left: 0 !important;
-  width: 100% !important;
-  padding-top: 8rem !important;
-}
-
-/* Style the category elements */
-.quarto-listing-category-title {
-  font-size: 0.8rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.08em !important;
-  font-weight: 600 !important;
-  margin-bottom: 1rem !important;
-  color: #E8561C !important;
-}
-
-.quarto-listing-category .category {
-  display: inline-block !important;
-  background: var(--color-surface) !important;
-  color: var(--color-text-secondary) !important;
-  padding: 0.4rem 1rem !important;
-  border-radius: 2rem !important;
-  font-size: 0.7rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
-  margin-right: 0.75rem !important;
-  margin-bottom: 0.5rem !important;
-  border: 1px solid var(--color-border) !important;
-  transition: var(--transition) !important;
-  cursor: pointer !important;
-  box-shadow: var(--shadow-light) !important;
-}
-
-.quarto-listing-category .category:hover,
-.quarto-listing-category .category.active {
-  background: var(--color-accent) !important;
-  color: white !important;
-  border-color: var(--color-accent) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: var(--shadow-medium) !important;
-}
-
-/* Add space for the repositioned categories */
-.blog-content {
-  padding-top: 0 !important;
-}
-
-/* Use flexbox to control the order properly */
-.quarto-container:has(.quarto-listing) {
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-.quarto-container:has(.quarto-listing) .content.column-page-left {
-  order: 1 !important;
-}
-
-.quarto-container:has(.quarto-listing) #quarto-margin-sidebar {
-  order: 2 !important;
-}
-
-/* Blog Filters */
-.blog-filters {
-  margin-bottom: 4rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.filter-section h3 {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #E8561C;
-}
-
-.category-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
 /* Blog Post Listing */
 .quarto-listing {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 .quarto-listing-default .listing-item {
@@ -1212,12 +1108,45 @@ header.global-header {
   outline: 3px solid var(--color-accent);
 }
 
-/* Category bar inline */
-#quarto-margin-sidebar{position:static!important;float:none!important;width:auto!important;margin:1rem 4% 2rem 4%!important;padding:0!important;}
-.quarto-listing-category-title{display:none;}
-.quarto-listing-category{margin:1rem 4% 2rem 4%;}
-.quarto-listing-category .category{background:var(--color-surface);border:1px solid var(--color-primary);color:var(--color-primary);}
-.quarto-listing-category .category.active,.quarto-listing-category .category:hover{background:var(--color-primary);color:#fff;}
+/* Initially hide category sidebar to prevent it showing above hero */
+#quarto-margin-sidebar {
+  visibility: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+}
+
+/* Style the relocated categories */
+.relocated-categories {
+  margin: 1rem 4% 0.5rem 4% !important;
+  padding: 0 !important;
+}
+
+.relocated-categories .quarto-listing-category-title{display:none;}
+.relocated-categories .quarto-listing-category .category{
+  background:var(--color-surface);
+  border:1px solid var(--color-primary);
+  color:var(--color-primary);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.relocated-categories .quarto-listing-category .category.active,
+.relocated-categories .quarto-listing-category .category:hover{
+  background:var(--color-primary);
+  color:#fff;
+}
+
+/* Reset blog layout */
+.quarto-container:has(.quarto-listing) {
+  display: block !important;
+}
+
+.quarto-container:has(.quarto-listing) .content.column-page-left {
+  padding-top: 0 !important;
+}
 
 /* Focus outline */
 :focus-visible{outline:3px solid var(--color-accent);outline-offset:2px;}
@@ -1326,6 +1255,22 @@ main > header:first-child {
   display: none !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+/* Force blog listing pages to have no top margin/padding on main content */
+.quarto-container:has(.quarto-listing) {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.quarto-container:has(.quarto-listing) main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure hero on blog pages sits flush under header */
+.quarto-container:has(.quarto-listing) .hero {
+  margin-top: 0 !important;
 } 
 
 /* Back to Top Button */
@@ -1367,4 +1312,49 @@ main > header:first-child {
 .btn-primary:focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 4px;
+} 
+
+/* Custom styles for Quarto sort and filter UI */
+.quarto-listing .listing-sort,
+.quarto-listing .listing-filter input {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  transition: var(--transition);
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.quarto-listing .listing-sort:focus,
+.quarto-listing .listing-filter input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(232, 86, 28, 0.1);
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+  .quarto-listing .listing-sort,
+  .quarto-listing .listing-filter input {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.9rem;
+  }
+}
+
+/* Adjust category buttons for filter UI */
+.quarto-listing-category .category {
+  padding: 0.5rem 1.2rem;
+  margin: 0.3rem;
+  font-size: 0.85rem;
+}
+
+/* Active state */
+.quarto-listing-category .category.active {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
 } 
