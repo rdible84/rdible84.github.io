@@ -17,22 +17,6 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-:root[data-theme="dark"]{
-  --color-bg:#1a1a1a;
-  --color-text:#f5f5f5;
-  --color-text-secondary:#bbbbbb;
-  --color-primary:#E8561C;
-  --color-accent:#8ecae6;
-  --color-border: #333333;
-  --color-surface: #2a2a2a;
-}
-
-#mode-toggle{
-  background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--color-text-secondary);
-  transition: var(--transition);
-}
-#mode-toggle:hover{color:var(--color-primary);transform: scale(1.1);}
-
 @font-face {
   font-family: 'Tabular';
   src: url('Tabular_Complete/Fonts/WEB/fonts/Tabular-Variable.woff2') format('woff2'),
@@ -1262,6 +1246,17 @@ html,body{transition:background .4s ease,color .4s ease;}
   box-shadow: var(--shadow-light);
   transition: var(--transition);
 }
+/* Responsive listing card image/container */
+.quarto-post .thumbnail {
+  flex: 0 0 auto;
+}
+.quarto-post .thumbnail picture,
+.quarto-post .thumbnail picture > img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius);
+}
 .quarto-post .thumbnail{flex:0 0 220px;max-width:220px;}
 .quarto-post .thumbnail img{width:100%;height:auto;border-radius:var(--border-radius);}
 .quarto-post .body{flex:1;}
@@ -1331,4 +1326,45 @@ main > header:first-child {
   display: none !important;
   margin: 0 !important;
   padding: 0 !important;
+} 
+
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: var(--transition);
+}
+#back-to-top:hover,
+#back-to-top:focus-visible {
+  background: var(--color-accent);
+} 
+
+/* Contrast Enhancement for Hero Section */
+.hero::before {
+  background: rgba(0, 0, 0, 0.3) !important; /* darker overlay for text contrast */
+}
+.hero-title,
+.hero-sub {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Improved Focus Styles for Header Links */
+.main-nav .nav-link:focus-visible,
+.global-header .logo:focus-visible,
+.btn-primary:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
 } 
