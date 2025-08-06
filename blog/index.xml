@@ -22,6 +22,19 @@
   <div class="container">
     <a href="../../" class="logo"><img src="https://talentpathfinder.com/assets/logo.png" alt="Talent Pathfinder logo" class="logo-img"></a>
     
+    <script>
+      /* Highlight active nav link based on current URL path */
+      document.addEventListener('DOMContentLoaded', function() {
+        var current = window.location.pathname.replace(/\/$/, '').toLowerCase();
+        document.querySelectorAll('.main-nav .nav-link').forEach(function(link) {
+          var href = link.getAttribute('href').replace(/\/$/, '').toLowerCase();
+          if (href === current) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+          }
+        });
+      });
+    </script>
   </div>
 </header> 
 
@@ -199,6 +212,19 @@ The Future of Executive Search: AI, Data, and Human Judgment
   <div class="container">
     <a href="../../" class="logo"><img src="https://talentpathfinder.com/assets/logo.png" alt="Talent Pathfinder logo" class="logo-img"></a>
     
+    <script>
+      /* Highlight active nav link based on current URL path */
+      document.addEventListener('DOMContentLoaded', function() {
+        var current = window.location.pathname.replace(/\/$/, '').toLowerCase();
+        document.querySelectorAll('.main-nav .nav-link').forEach(function(link) {
+          var href = link.getAttribute('href').replace(/\/$/, '').toLowerCase();
+          if (href === current) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+          }
+        });
+      });
+    </script>
   </div>
 </header> 
 
@@ -408,6 +434,19 @@ Building Diverse Leadership Teams: Beyond the Checkbox
   <div class="container">
     <a href="../../" class="logo"><img src="https://talentpathfinder.com/assets/logo.png" alt="Talent Pathfinder logo" class="logo-img"></a>
     
+    <script>
+      /* Highlight active nav link based on current URL path */
+      document.addEventListener('DOMContentLoaded', function() {
+        var current = window.location.pathname.replace(/\/$/, '').toLowerCase();
+        document.querySelectorAll('.main-nav .nav-link').forEach(function(link) {
+          var href = link.getAttribute('href').replace(/\/$/, '').toLowerCase();
+          if (href === current) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+          }
+        });
+      });
+    </script>
   </div>
 </header> 
 

@@ -140,6 +140,19 @@ $endif$
       <a href="../../blog/" class="nav-link">Insights</a>
       <a href="../../contact.html" class="btn-primary">Contact Us</a>
     </nav>
+    <script>
+      /* Highlight active nav link based on current URL path */
+      document.addEventListener('DOMContentLoaded', function() {
+        var current = window.location.pathname.replace(/\/$/, '').toLowerCase();
+        document.querySelectorAll('.main-nav .nav-link').forEach(function(link) {
+          var href = link.getAttribute('href').replace(/\/$/, '').toLowerCase();
+          if (href === current) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+          }
+        });
+      });
+    </script>
   </div>
 </header> 
 

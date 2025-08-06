@@ -17,23 +17,6 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@font-face {
-  font-family: 'Tabular';
-  src: url('Tabular_Complete/Fonts/WEB/fonts/Tabular-Variable.woff2') format('woff2'),
-       url('Tabular_Complete/Fonts/WEB/fonts/Tabular-Variable.woff') format('woff');
-  font-weight: 300 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Tabular';
-  src: url('Tabular_Complete/Fonts/WEB/fonts/Tabular-VariableItalic.woff2') format('woff2'),
-       url('Tabular_Complete/Fonts/WEB/fonts/Tabular-VariableItalic.woff') format('woff');
-  font-weight: 300 700;
-  font-style: italic;
-  font-display: swap;
-}
 
 /* Simple fix: Make the main container full width */
 .quarto-container {
@@ -42,7 +25,7 @@
 
 /* Global Reset and Base Styles */
 html, body {
-  font-family: 'Inter', 'Tabular', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
@@ -691,7 +674,7 @@ header.global-header {
   justify-content: space-between;
 }
 .logo {
-  font-family: 'Tabular', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.08em;
@@ -773,7 +756,7 @@ header.global-header {
 }
 
 .footer-brand {
-  font-family: 'Tabular', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
   color: var(--color-primary);
@@ -992,7 +975,7 @@ header.global-header {
   z-index: 2;
 }
 .hero-title {
-  font-family: 'Tabular', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   font-size: 2.8rem;
   line-height: 1.2;
