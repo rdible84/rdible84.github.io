@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://talentpathfinder.com
+Sitemap: https://talentpathfinder.com/sitemap.xml
