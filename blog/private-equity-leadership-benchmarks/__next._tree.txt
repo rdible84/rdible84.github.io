@@ -1,9 +1,9 @@
-:HL["/_next/static/chunks/3wiv0k9mqbyv0.css","style"]
-:HL["/_next/static/media/48cfc7c57f9244a1-s.p.3qxougo2dxrk7.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/chunks/39hv_w2rb5g7r.css","style"]
+:HL["/_next/static/media/479a4ba8fada9125-s.p.1h8-jjotlc3p8.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/48eea41d8317494f-s.p.0wiir8udbzjvx.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/a036da9e181f7bda-s.p.17c61zbdzi3u-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/ab181a5889868501-s.p.3_l0g533s-o0-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/media/e873d1be9bc8de24-s.p.06apcr9x5ml-j.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"slug","t":"d","k":"private-equity-leadership-benchmarks","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"blog","h":64,"c":"$Q2"}]]
-0:{"b":"fmLJV-bw_MUs5gcSAxBZn","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"lE1UG9HO6PurhEMKeKPSe","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
